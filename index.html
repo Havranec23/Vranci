@@ -9,53 +9,41 @@
     <link rel="stylesheet" href="https://unpkg.com" />
 
     <style>
-        /* Základní reset stránky */
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
         }
 
-        /* 2. Stylování kontejneru pro mapu (musí mít definovanou výšku) */
+        /* 2. Kontejner MUSÍ mít definovanou výšku, jinak bude neviditelný */
         #map {
             width: 100%;
-            height: 100vh; /* Mapa přes celou obrazovku */
+            height: 100vh; 
         }
     </style>
 </head>
 <body>
 
-    <!-- Kontejner, do kterého se mapa vykreslí -->
+    <!-- Místo pro mapu -->
     <div id="map"></div>
 
-    <!-- 3. Připojení JavaScriptu pro Leaflet mapu -->
-    <script href="https://unpkg.com"></script>
+    <!-- 3. SPRÁVNÉ připojení JavaScriptu pro Leaflet (opraveno na src) -->
+    <script src="https://unpkg.com"></script>
 
     <script>
-        // 4. Inicializace mapy (nastavení středu a přiblížení - např. Praha)
-        // Souřadnice: [zeměpisná šířka, zeměpisná délka], přiblížení: 13
+        // 4. Inicializace mapy (střed Praha)
         const map = L.map('map').setView([50.0878, 14.4205], 13);
 
-        // 5. Načtení mapových podkladů z OpenStreetMap
+        // 5. Načtení mapových podkladů
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
-            attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a> contributors'
+            attribution: '© OpenStreetMap'
         }).addTo(map);
 
-        // 6. Přidání špendlíků (markerů)
-
-        // První špendlík - Staroměstské náměstí
-        const marker1 = L.marker([50.0878, 14.4205]).addTo(map);
-        // Přidání vyskakovacího okna (popup) po kliknutí
-        marker1.bindPopup("<b>Staroměstské náměstí</b><br>Srdce historické Prahy.").openPopup();
-
-        // Druhý špendlík - Karlův most
-        const marker2 = L.marker([50.0864, 14.4114]).addTo(map);
-        marker2.bindPopup("<b>Karlův most</b><br>Slavný historický most přes Vltavu.");
-
-        // Třetí špendlík - Pražský hrad
-        const marker3 = L.marker([50.0902, 14.4006]).addTo(map);
-        marker3.bindPopup("<b>Pražský hrad</b><br>Největší starobylý hradní komplex na světě.");
+        // 6. Přidání jednoho testovacího špendlíku
+        L.marker([50.0878, 14.4205]).addTo(map)
+            .bindPopup("<b>Staroměstské náměstí</b>")
+            .openPopup();
     </script>
 </body>
 </html>
