@@ -47,116 +47,74 @@
 
 <script>
 
-// Create map
-const map = L.map('map');
+// Create the map
+const map = L.map("map");
 
-// OpenStreetMap tiles
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap Contributors',
+// OpenStreetMap layer
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution: "&copy; OpenStreetMap contributors",
     maxZoom: 19
 }).addTo(map);
 
-// Colored marker icons
-const redIcon = new L.Icon({
-    iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png",
-    shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-    iconSize: [25,41],
-    iconAnchor: [12,41],
-    popupAnchor: [1,-34],
-    shadowSize: [41,41]
-});
+// Group for markers
+const group = L.featureGroup().addTo(map);
 
-const blueIcon = new L.Icon({
-    iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-blue.png",
-    shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-    iconSize: [25,41],
-    iconAnchor: [12,41],
-    popupAnchor: [1,-34],
-    shadowSize: [41,41]
-});
+// Load markers from JSON
+fetch("markers.json")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Could not load markers.json");
+        }
+        return response.json();
+    })
+    .then(locations => {
 
-const greenIcon = new L.Icon({
-    iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png",
-    shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-    iconSize: [25,41],
-    iconAnchor: [12,41],
-    popupAnchor: [1,-34],
-    shadowSize: [41,41]
-});
+        locations.forEach(location => {
 
-// Marker data
-const locations = [
-    {
-        name: "New York",
-        lat: 40.7128,
-        lng: -74.0060,
-        icon: blueIcon,
-        description: "The Big Apple"
-    },
-    {
-        name: "London",
-        lat: 51.5074,
-        lng: -0.1278,
-        icon: greenIcon,
-        description: "Capital of England"
-    },
-    {
-        name: "Paris",
-        lat: 48.8566,
-        lng: 2.3522,
-        icon: redIcon,
-        description: "City of Light"
-    },
-    {
-        name: "Tokyo",
-        lat: 35.6762,
-        lng: 139.6503,
-        icon: blueIcon,
-        description: "Capital of Japan"
-    }
-];
+            const marker = L.marker([location.lat, location.lng]);
 
-// Store markers
-const group = L.featureGroup();
+            marker.bindPopup(`
+                <h3>${location.name}</h3>
+                <p>${location.description}</p>
+                <b>Latitude:</b> ${location.lat}<br>
+                <b>Longitude:</b> ${location.lng}
+            `);
 
-locations.forEach(location => {
+            marker.addTo(group);
 
-    const marker = L.marker(
-        [location.lat, location.lng],
-        { icon: location.icon }
-    );
+        });
 
-    marker.bindPopup(`
-        <h3>${location.name}</h3>
-        <p>${location.description}</p>
-        <b>Latitude:</b> ${location.lat}<br>
-        <b>Longitude:</b> ${location.lng}
-    `);
+        // Zoom to show all markers
+        if (locations.length > 0) {
+            map.fitBounds(group.getBounds(), {
+                padding: [50, 50]
+            });
+        } else {
+            map.setView([0, 0], 2);
+        }
 
-    marker.addTo(group);
-});
+    })
+    .catch(error => {
+        console.error(error);
 
-group.addTo(map);
+        // Default view if JSON cannot be loaded
+        map.setView([20, 0], 2);
+    });
 
-// Zoom to fit all markers
-map.fitBounds(group.getBounds(), {
-    padding: [50, 50]
-});
-
-// Add marker when clicking map
-map.on("click", function(e) {
+// Optional: Add markers by clicking on the map
+map.on("click", function (e) {
 
     L.marker(e.latlng)
         .addTo(map)
         .bindPopup(`
-            <b>Custom Marker</b><br>
-            Lat: ${e.latlng.lat.toFixed(5)}<br>
-            Lng: ${e.latlng.lng.toFixed(5)}
+            <b>New Marker</b><br>
+            Latitude: ${e.latlng.lat.toFixed(5)}<br>
+            Longitude: ${e.latlng.lng.toFixed(5)}
         `)
         .openPopup();
 
 });
-
+    
 </script>
 
 </body>
