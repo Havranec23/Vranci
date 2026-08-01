@@ -1,0 +1,20 @@
+[
+    {
+        "name": "New York",
+        "lat": 40.7128,
+        "lng": -74.0060,
+        "description": "The Big Apple"
+    },
+    {
+        "name": "London",
+        "lat": 51.5074,
+        "lng": -0.1278,
+        "description": "Capital of England"
+    },
+    {
+        "name": "Paris",
+        "lat": 48.8566,
+        "lng": 2.3522,
+        "description": "City of Light"
+    }
+]
