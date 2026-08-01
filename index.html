@@ -1,49 +1,41 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moje mapa se špendlíky</title>
+    <title>Leaflet Map</title>
 
-    <!-- 1. Připojení CSS pro Leaflet mapu -->
-    <link rel="stylesheet" href="https://unpkg.com" />
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        /* 2. Kontejner MUSÍ mít definovanou výšku, jinak bude neviditelný */
         #map {
+            height: 500px;
             width: 100%;
-            height: 100vh; 
         }
     </style>
 </head>
 <body>
 
-    <!-- Místo pro mapu -->
-    <div id="map"></div>
+<div id="map"></div>
 
-    <!-- 3. SPRÁVNÉ připojení JavaScriptu pro Leaflet (opraveno na src) -->
-    <script src="https://unpkg.com"></script>
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
-    <script>
-        // 4. Inicializace mapy (střed Praha)
-        const map = L.map('map').setView([50.0878, 14.4205], 13);
+<script>
+    // Create the map
+    const map = L.map('map').setView([40.7128, -74.0060], 13);
 
-        // 5. Načtení mapových podkladů
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '© OpenStreetMap'
-        }).addTo(map);
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
 
-        // 6. Přidání jednoho testovacího špendlíku
-        L.marker([50.0878, 14.4205]).addTo(map)
-            .bindPopup("<b>Staroměstské náměstí</b>")
-            .openPopup();
-    </script>
+    // Add a marker
+    L.marker([40.7128, -74.0060])
+        .addTo(map)
+        .bindPopup("<b>New York City</b><br>Hello!")
+        .openPopup();
+</script>
+
 </body>
 </html>
