@@ -1,5 +1,5 @@
 * {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana. sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 body {
   background-image: url("../images/index_background.jpeg");
@@ -25,4 +25,5 @@ footer {
   display: flex;
   justify-content: flex-end;
   text-align: flex-end;
+  height: 200px;
 }
