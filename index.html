@@ -20,6 +20,20 @@
         <il><p><a href="https://Havranec23.github.io/Bile-Karpaty-2026">Expedice Bílé Karpaty (2026)</a></p></il>
         <il><p><a target="_blank" href="https://www.youtube.com/@RavenMusicYT">Youtube kanál (RavenMusicYT)</a></p></il>
       </ul>
+      
+      <p>Verze aplikace: <span id="app-version"></span></p>
+
+      <script>
+        const data = { 
+          "app_version": { 
+            "version": "1.0.0" 
+          } 
+        };
+
+        const versionText = "v" + data.app_version.version;
+  
+        document.getElementById("app-version").textContent = versionText;
+      </script>
     </main>
   </body>
 </html>
