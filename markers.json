@@ -1,26 +1,26 @@
 [
     {
-        "name": "New York",
-        "lat": "40.7128",
-        "lng": "-74.0060",
-        "description": "The Big Apple"
-    },
-    {
-        "name": "London",
-        "lat": "51.5074",
-        "lng": "-0.1278",
-        "description": "Capital of England"
-    },
-    {
-        "name": "Paris",
-        "lat": "48.8566",
-        "lng": "2.3522",
-        "description": "City of Light"
-    },
-    {
         "name": "DOMOV - Stodůlky",
         "lat": "50.048282",
         "lng": "14.305642",
         "description": "Nejlepší část Prahy"
+    },
+    {
+        "name": "Velká Javořina (970 m. n. m.)",
+        "lat": "48.8577341",
+        "lng": "17.6757038",
+        "description": "Nejvyšší hora Bílých Karpat"
+    },
+    {
+        "name": "Velký Lopeník (911 m. n. m.)",
+        "lat": "48.9167792",
+        "lng": "17.7825397",
+        "description": "Nejvyšší vrchol Lopenické hornatiny"
+    },
+    {
+        "name": "Trenčín",
+        "lat": "48.8922719",
+        "lng": "18.0387464",
+        "description": "- Hlavní město Trenčínského kraje\n- Římský nápis z roku 179"
     }
 ]
