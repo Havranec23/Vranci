@@ -1,27 +1,42 @@
+/* Globální reset, aby padding nezvětšoval šířku prvků */
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-image: url("../images/index_background.jpeg");
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  
+  /* OPRAVA PRO MOBILY: dH místo vH */
+  min-height: 100dvh; 
+  
   margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between; /* Rozmístí main doprostřed a footer dolů */
   align-items: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  box-sizing: border-box;
   padding: 20px;
 }
 
 main {
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
-  width: 350px;
+  
+  /* OPRAVA PRO MOBILY: Přizpůsobí se šířce displeje */
+  width: 100%;
+  max-width: 350px; 
+  
   padding: 40px;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background-color: rgba(255, 255, 255, 0.15); 
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); /* OPRAVENO: přidána závorka */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  
+  /* Centrování ve flexboxovém sloupci */
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 footer {
@@ -29,5 +44,5 @@ footer {
   justify-content: flex-end;
   align-items: flex-end;
   width: 100%;
-  margin-top: auto;
+  /* Už nepotřebuje margin-top: auto, o rozestup se stará body */
 }
