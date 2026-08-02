@@ -1,5 +1,7 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana. sans-serif;
+}
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-image: url("../images/index_background.jpeg");
   background-size: cover;
   background-position: center;
@@ -22,4 +24,5 @@ main {
 footer {
   display: flex;
   justify-content: flex-end;
+  text-align: flex-end;
 }
