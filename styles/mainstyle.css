@@ -1,40 +1,73 @@
-/* Globální reset, aby padding nezvětšoval šířku prvků */
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-image: url("../images/index_background.jpeg");
-  background-size: cover;
-  background-position: center;
-  
-  /* KLÍČOVÉ OPRAVY PRO POZADÍ */
-  background-repeat: no-repeat;   /* Zakáže opakování obrázku */
-  background-attachment: fixed;  /* Přišpendlí pozadí, aby se nehýbalo při skrolování */
-  
-  min-height: 100dvh; 
   margin: 0;
+  min-height: 100dvh;
+  padding: calc(20px + env(safe-area-inset-top))
+           calc(20px + env(safe-area-inset-right))
+           calc(20px + env(safe-area-inset-bottom))
+           calc(20px + env(safe-area-inset-left));
+
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
+  justify-content: center;
   align-items: center;
+
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  padding: 20px;
+
+  background: url("../images/index_background.jpeg") center center / cover
+    no-repeat fixed;
 }
 
 main {
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-  
-  /* OPRAVA PRO MOBILY: Přizpůsobí se šířce displeje */
+  width: min(92vw, 380px);
+  padding: 36px;
+  border-radius: 24px;
+
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.3),
+    inset 0 1px rgba(255, 255, 255, 0.2);
+}
+
+footer {
   width: 100%;
-  max-width: 350px; 
-  
-  padding: 40px;
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: rgba(255, 255, 255, 0.15); 
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+}
+
+@media (max-width: 480px) {
+  body {
+    background-attachment: scroll;
+    padding: 16px;
+  }
+
+  main {
+    width: 100%;
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  footer {
+    justify-content: center;
+    padding-top: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  main {
+    padding: 20px;
+    border-radius: 18px;
+  }
+}  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   
   /* Centrování ve flexboxovém sloupci */
   margin-top: auto;
