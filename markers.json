@@ -28,5 +28,11 @@
         "lat": "50.7550647",
         "lng": "15.2461419",
         "description": "Smržovka ev. č. 125"
+    },
+    {
+        "name": "Orle",
+        "lat": "50.8153722",
+        "lng": "15.3829669",
+        "description": "Turistické místo v Jizerkách"
     }
 ]
