@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="images/favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="styles/mapstyle.css">
-<title>Vránkovi - Mapa Expedic</title>
-<!-- Leaflet CSS -->
-<link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles/mapstyle.css">
+  <title>Vránkovi - Mapa Expedic</title>
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 </head>
 <body>
+  <link rel="stylesheet" href="styles/navstyle.css">
+  <script src="sidebarScript.js"></script>
   <nav>
     <ul class="sidebar">
       <li onclick="hideSidebar()"><a><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
@@ -27,88 +27,8 @@
       <li class="menu-button" onclick="showSidebar()"><a><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
     </ul>
   </nav>
-
-  <link rel="stylesheet" href="styles/navstyle.css">
-  <script src="sidebarScript.js"></script>
-
-<div id="map"></div>
-
-<!-- Leaflet JS -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-<script>
-
-// Create the map
-const map = L.map("map");
-
-// OpenStreetMap layer
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution: "&copy; OpenStreetMap contributors",
-    maxZoom: 19
-}).addTo(map);
-
-// Group for markers
-const group = L.featureGroup().addTo(map);
-
-// Load markers from JSON
-fetch("markers.json")
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Could not load markers.json");
-        }
-        return response.json();
-    })
-    .then(locations => {
-
-        locations.forEach(location => {
-
-            const marker = L.marker([location.lat, location.lng]);
-
-            marker.bindPopup(`
-                <h3>${location.name}</h3>
-                <p>${location.description}</p>
-                <b>Latitude:</b> ${location.lat}<br>
-                <b>Longitude:</b> ${location.lng}
-            `);
-
-            marker.addTo(group);
-
-        });
-
-        // Zoom to show all markers
-        if (locations.length > 0) {
-            map.fitBounds(group.getBounds(), {
-                padding: [50, 50]
-            });
-        } else {
-            map.setView([0, 0], 2);
-        }
-
-    })
-    .catch(error => {
-        console.error(error);
-
-        // Default view if JSON cannot be loaded
-        map.setView([20, 0], 2);
-    });
-
-// Optional: Add markers by clicking on the map
-/*
-map.on("click", function (e) {
-
-    L.marker(e.latlng)
-        .addTo(map)
-        .bindPopup(`
-            <b>New Marker</b><br>
-            Latitude: ${e.latlng.lat.toFixed(5)}<br>
-            Longitude: ${e.latlng.lng.toFixed(5)}
-        `)
-        .openPopup();
-
-});
-*/
-    
-</script>
-
+  <div id="map"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="mapscript.js"></script>
 </body>
 </html>
