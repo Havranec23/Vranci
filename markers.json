@@ -21,6 +21,12 @@
         "name": "Trenčín",
         "lat": "48.8922719",
         "lng": "18.0387464",
-        "description": "- Hlavní město Trenčínského kraje, Římský nápis z roku 179"
+        "description": "Hlavní město Trenčínského kraje, Římský nápis z roku 179"
+    },
+    {
+        "name": "Chalupa",
+        "lat": "50.7550647",
+        "lng": "15.2461419",
+        "description": "Smržovka ev. č. 125"
     }
 ]
