@@ -1,0 +1,78 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+header{
+  background-color: hsl(0, 0%, 90%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(70px + .8vw);
+  flex-direction: column;
+  font-size: calc(10px + .8vw);
+}
+
+main{
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+aside{
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 25%;
+}
+
+aside ul{
+  display: flex;
+  flex-direction: column;
+}
+
+aside ul li{
+  font-weight: normal;
+  list-style: none;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+aside ul li:hover{
+  transition: 0.1s;
+  cursor: pointer;
+  background-color: hsla(0, 0%, 100%, 0.2);
+}
+
+aside ul li.active {
+  background-color: #ffffff;
+  font-weight: bold;
+}
+
+section{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 75%;
+}
+
+section > div{
+  display: none;
+}
+
+section > div:last-child{
+  display: block;
+}
+
+h2{
+  padding-bottom: 20px;
+}
+
+.dni{
+  margin-left: 20px;
+}
