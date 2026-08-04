@@ -34,5 +34,47 @@
         "lat": "50.8153722",
         "lng": "15.3829669",
         "description": "Turistické místo v Jizerkách"
+    },
+    {
+        "name": "Sněžka (1603 m .n m.)",
+        "lat": "50.7360200",
+        "lng": "15.7396017",
+        "description": "Nejvyšší hora České republiky"
+    },
+    {
+        "name": "(Tanvaldský) Špičák (812 m. n. m.)",
+        "lat": "50.7516753",
+        "lng": "15.2812750",
+        "description": "Lyžařské středisko s rozhlednou"
+    },
+    {
+        "name": "Buková (836 m. n. m.)",
+        "lat": "50.7603908",
+        "lng": "15.2440736",
+        "description": "Druhý nejvýznamnější čedičový výlev v Jizerských horách"
+    },
+    {
+        "name": "Jizera (1122 m. n. m.)",
+        "lat": "50.8339186",
+        "lng": "15.2596914",
+        "description": "Druhá nejvyšší hora Jizerských hor"
+    },
+    {
+        "name": "Bukovec (1005 m. n. m.)",
+        "lat": "50.8144000",
+        "lng": "15.3578217",
+        "description": "Hora na Jizerce"
+    },
+    {
+        "name": "Salcburk (Salzburg)",
+        "lat": "47.7981344",
+        "lng": "13.0464806",
+        "description": "Krajské město stejnojmenného kraje v Rakousku"
+    },
+    {
+        "name": "Wolgangsee",
+        "lat": "47.7457500",
+        "lng": "13.4033497",
+        "description": "S rozlohou 13 km² je největším jezerem Salzburska"
     }
 ]
