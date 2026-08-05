@@ -1,5 +1,18 @@
+:root{
+  --text-color: black;
+  --background-color: white;
+  --hover-color: #f0f0f0;
+  --sidebar-background: rgba(255, 255, 255, 0.2);
+}
+.darkmode{
+  --text-color: white;
+  --background-color: #222222;
+  --hover-color: #333333;
+  --sidebar-background: rgba(0, 0, 0, 0.2);
+}
+
 nav{
-  background-color: white;
+  background-color: var(--background-color);
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
 }
 nav ul{
@@ -18,10 +31,10 @@ nav a{
   text-decoration: none;
   display: flex;
   align-items: center;
-  color: black;
+  color: var(--text-color);
 }
 nav a:hover{
-  background-color: #f0f0f0;
+  background-color: var(--hover-color)
 }
 nav li:first-child{
   margin-right: auto;
@@ -33,7 +46,7 @@ nav li:first-child{
   height: 100vh;
   width: 250px;
   z-index: 999;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--sidebar-background);
   backdrop-filter: blur(10px);
   box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
   display: none;
@@ -48,7 +61,11 @@ nav li:first-child{
   width: 100%;
 }
 .menu-button{
+  cursor: pointer;
   display: none;
+}
+.icons{
+  fill: var(--text-color);
 }
 @media(max-width: 800px){
   .hideOnMobile{
