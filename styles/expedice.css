@@ -96,6 +96,12 @@ h2{
   padding-bottom: 20px;
 }
 
-.dni{
+section ul li{
   margin-left: 20px;
+}
+section ol li{
+  margin-left: 30px;
+}
+section a{
+  text-decoration: none;
 }
