@@ -11,7 +11,7 @@ L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
 const group = L.featureGroup().addTo(map);
 
 // Load markers from JSON
-fetch("markers.json")
+fetch("../mapa/markers.json")
     .then(response => {
         if (!response.ok) {
             throw new Error("Could not load markers.json");
