@@ -76,5 +76,11 @@
         "lat": "47.7457500",
         "lng": "13.4033497",
         "description": "S rozlohou 13 km² je největším jezerem Salzburska"
+    },
+    {
+        "name": "Zante Sun",
+        "lat": "37.7139950",
+        "lng": "20.8595490",
+        "description": "Hotel v Agios Sostis (ostrov Zakynthos)"
     }
 ]
