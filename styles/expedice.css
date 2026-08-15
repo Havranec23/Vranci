@@ -50,17 +50,51 @@ section > div:last-child{
   display: block;
 }
 
-h2{
+h2 {
   padding-bottom: 20px;
 }
+
+h2 > a { color: #fff !important; }
 
 section ul li{
   margin-left: 20px;
 }
+
+.content-ul {
+  margin-left: 20px;
+}
+
 section ol li{
   margin-left: 30px;
 }
+
 section a{
   text-decoration: none;
   color: var(--href-color)
+}
+
+.images {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.images img {
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@media(max-width: 500px) {
+  .images img { display: none; }
+}
+
+#zantesun-img1 {
+  max-height: 200px;
+  width: auto;
+}
+
+#zantesun-img2 {
+  max-height: 200px;
+  width: auto;
 }
