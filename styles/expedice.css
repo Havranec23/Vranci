@@ -54,7 +54,7 @@ h2 {
   padding-bottom: 20px;
 }
 
-h2 > a { color: #fff !important; }
+h2 > a { color: var(--text-color) !important; }
 
 section ul li{
   margin-left: 20px;
@@ -77,16 +77,19 @@ section a{
   display: flex;
   flex-direction: row;
   gap: 30px;
+  flex-wrap: wrap;
+}
+
+.images a {
+  margin-top: 20px;
 }
 
 .images img {
   border-radius: 10px;
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 @media(max-width: 500px) {
-  .images img { display: none; }
+  .images a { display: none; }
 }
 
 #zantesun-img1 {
