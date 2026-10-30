@@ -82,5 +82,29 @@
         "lat": "37.7139950",
         "lng": "20.8595490",
         "description": "Hotel v Agios Sostis (ostrov Zakynthos)"
+    },
+    {
+        "name": "Plešivec (654 m)",
+        "lat": "49.8112500",
+        "lng": "13.9888144",
+        "description": "vyhlídkové místo v Brdech"
+    },
+    {
+        "name": "Penzion U Zmátlů",
+        "lat": "49.3938850",
+        "lng": "15.3301289",
+        "description": "Ubytování (Nový Rychnov - Sázava)"
+    },
+    {
+        "name": "Křemešník (769 m. n. m.)",
+        "lat": "49.4041669",
+        "lng": "15.3250000",
+        "description": "Nejvyšší vrchol Kremešnické Vrchoviny"
+    },
+    {
+        "name": "Javořice (837 m. n. m.)",
+        "lat": "49.2209778",
+        "lng": "15.3395544",
+        "description": "Nejvyšší vrchol Českomoravské Vrchoviny"
     }
 ]
