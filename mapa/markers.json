@@ -106,5 +106,11 @@
         "lat": "49.2209778",
         "lng": "15.3395544",
         "description": "Nejvyšší vrchol Českomoravské Vrchoviny"
+    },
+    {
+        "name": "Penzion Kozel",
+        "lat": "50.6553008",
+        "lng": "15.6100461",
+        "description": "Oblíbené ubytování"
     }
 ]
