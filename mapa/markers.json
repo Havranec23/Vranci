@@ -1,11 +1,5 @@
 [
     {
-        "name": "DOMOV - Stodůlky",
-        "lat": "50.048282",
-        "lng": "14.305642",
-        "description": "Nejlepší část Prahy"
-    },
-    {
         "name": "Velká Javořina (970 m. n. m.)",
         "lat": "48.8577341",
         "lng": "17.6757038",
@@ -112,5 +106,11 @@
         "lat": "50.6553008",
         "lng": "15.6100461",
         "description": "Oblíbené ubytování"
+    },
+    {
+        "name": "Lety",
+        "lat": "49.9222847",
+        "lng": "14.2437353",
+        "description": ""
     }
 ]
