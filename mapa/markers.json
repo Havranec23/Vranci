@@ -18,10 +18,10 @@
         "description": "Hlavní město Trenčínského kraje, Římský nápis z roku 179"
     },
     {
-        "name": "Chalupa",
+        "name": "Chalupa - Jizerky",
         "lat": "50.7550647",
         "lng": "15.2461419",
-        "description": "Smržovka ev. č. 125"
+        "description": ""
     },
     {
         "name": "Orle",
@@ -106,11 +106,5 @@
         "lat": "50.6553008",
         "lng": "15.6100461",
         "description": "Oblíbené ubytování"
-    },
-    {
-        "name": "Lety",
-        "lat": "49.9222847",
-        "lng": "14.2437353",
-        "description": ""
     }
 ]
